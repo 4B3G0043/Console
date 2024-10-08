@@ -5,11 +5,16 @@ using namespace std;
 int main() {
     int size;
 
-    cout << "Enter the size of the grid (e.g., 9 for a 9x9 grid): ";
+    cout << "輸入乘法表大小(1~9): ";
     cin >> size;
 
     if (size <= 0) {
-        cout << "Please enter a positive integer." << endl;
+        cout << "請輸入正確的數值!" << endl;
+        return 1;
+    }
+
+    else if (size > 9) {
+        cout << "請輸入小於9的數值!" << endl;
         return 1;
     }
 
@@ -26,7 +31,7 @@ int main() {
 
     for (int i = 0; i < size; ++i) {
         for (int j = 0; j < size; ++j) {
-            cout << (i + 1) << " * " << (j + 1) << " = " << grid[i][j] << "\t";
+            cout << (i + 1) << "*" << (j + 1) << "=" << grid[i][j] << "\t";
         }
         cout << endl;
     }
